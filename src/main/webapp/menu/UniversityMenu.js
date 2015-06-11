@@ -1,6 +1,6 @@
 Ext.define("menu.UniversityMenu", {
 	extend : "menu.Menu",
-	requires:["data.college.ManageCollege"],
+	requires:["data.college.ManageCollege","data.collegesecretary.ManageCollegeSecretary"],
 	rootVisible : false,
 	store:{
 		root : {
@@ -17,6 +17,11 @@ Ext.define("menu.UniversityMenu", {
 							{
 								text:"学院信息管理",
 								cmpName:"data.college.ManageCollege",
+								leaf:true
+							},
+							{
+								text:"教学秘书管理",
+								cmpName:"data.collegesecretary.ManageCollegeSecretary",
 								leaf:true
 							}
 						]
