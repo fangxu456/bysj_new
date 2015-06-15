@@ -51,4 +51,14 @@ public class UserController extends BaseController{
 		}
 		return response;
 	}
+
+@RequestMapping(value="/user/checkForAdd")
+	public boolean checkForAdd(String column,String value)
+	{
+		int n=jt.queryForObject("select count(*) from user where "+column+"=?",Integer.class, value);
+		if(n>0)
+			return false;
+		else
+			return true;
+	}
 }
